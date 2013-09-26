@@ -2,7 +2,7 @@
  * contacto ajax
  * developed by (c) Moisés Cermeño
  * release date: julio 14, 2013
- * email: mo.frc08@gmail.com, FB: ferblacklion :D
+ * email: mo.frc08@gmail.com, FB: ferblacklion
  */
 ;(function ($) {
 	$.fn.contactForm = function(objCustomSettings){
