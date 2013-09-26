@@ -29,6 +29,7 @@
 			colorMensajeEnviado: '#0080C0', // color fuente del mensaje enviado
 			colorInputError: '#000000', // color fuente del input al introduccir algun dato
 			fontSize: '18px', // tamaño de fuente del mensaje enviado
+			colorFuenteError: '#ddd',
 			urlAjax: 'formContact.php' // archivo php que recibe los datos por POST
 		},objCustomSettings);
 
@@ -50,7 +51,7 @@
 						error = true;
 						$(this).css({
 							'outline': objGlobalSettings.bordeError,
-							'color': '#ddd'
+							'color': objGlobalSettings.colorFuenteError
 						});
 						$(this).val( objGlobalSettings.lang === 'es' ? objGlobalSettings.msgInputVacio_es : objGlobalSettings.msgInputVacio_en );
 						$(this).data('string','vacio');
@@ -58,6 +59,7 @@
 					/**
 					 * validación de correos con la clase
 					 * @class  mail
+					 * input_mail
 					 */
 					if ( $(this).hasClass('input_mail') ) {
 						var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -65,7 +67,7 @@
 							error = true;
 							$(this).css({
 								'outline': objGlobalSettings.bordeError,
-								'color': '#ddd'
+								'color': objGlobalSettings.colorFuenteError
 							});
 							$(this).val( objGlobalSettings.lang === 'es' ? objGlobalSettings.msgNoMail_es : objGlobalSettings.msgNoMail_en );
 							$(this).data('string','vacio');
@@ -73,13 +75,14 @@
 						/**
 						 * validacion de numeros con la clase telefono
 						 * @class telefono
+						 *  input_telefono
 						 */
 					} else if( $(this).hasClass('input_telefono') ) {
 						if ( isNaN($($(this)).val()) ) {
 							error = true;
 							$(this).css({
 								'outline': objGlobalSettings.bordeError,
-								'color': '#ddd'
+								'color': objGlobalSettings.colorFuenteError
 							});
 							$(this).val( objGlobalSettings.lang === 'es' ? objGlobalSettings.msgNoNumber_es : objGlobalSettings.msgNoNumber_en );
 							$(this).data('string','vacio');
